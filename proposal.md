@@ -27,7 +27,7 @@ Access Required: YES
 
 ## Goals and Objectives
 
-### Primary Goal: Collaborate across cloud infrastructure and AI tracks to design, deploy, and monitor a live, stateful AI-powered chat application featuring multi-turn negotiation using an event-driven serverless architecture and AI Agents.
+### Primary Goal: Collaborate across cloud infrastructure and AI tracks to design, deploy, and monitor a live, stateful AI-powered chat application featuring multi-turn negotiation using an event-driven serverless architecture and AI Agents
 
 #### Key Objectives
 
@@ -81,23 +81,25 @@ Target Cohort: 30 - 50 DCCI & DAI Members
 ## Architectural Blueprint & Technical Division
 
 - The system blueprint segregates duties between cloud infrastructure and AI engineering, simulating the functional workflow of an enterprise-grade technical squad.
-**DCCI Track (Infrastructure & Observability)**
-- Storage Edge: Provision an Amazon S3 bucket for global read-access, serving as the static hosting environment for the sentinel UI.
-- Ingestion Layer: Establish synchronous Amazon API Gateway HTTP APIs (POST /pitch) integrated with strict CORS security protocols.
+**DCCI Track (Infrastructure, Observability, & The Entrepreneurs)**
+- Storage Edge: Provision an Amazon S3 bucket for global read-access, serving as the static hosting environment for the Sentinel UI chat interface.
+- Ingestion & Compute Layer: Build the AWS Lambda function and Amazon API Gateway HTTP APIs to bridge the frontend with the DAI team's Bedrock Agent. Handle strict CORS security protocols.
 - Security Controls: Develop granular AWS IAM Least-Privilege Policies to confine Lambda execution to specific Bedrock resource scopes.
 - Observability Network: Deploy persistent monitoring via Amazon CloudWatch Logs to audit execution traces and visualize system latencies.
 
-**DAI Track (AI Systems Engineering)**
-Model Orchestration: Program the stateful backend logic using Amazon Bedrock Agents and Strands SDK to handle multi-turn conversational transactions.
-Multi-Persona Foundations: Design complex system instructions and agent templates via KiroCLI/Harness to facilitate concurrent, differentiated AI investor archetypes with memory.
-Strict Payload Contracts: Mandate precise Structured JSON Output from the model to ensure reliable data mapping into frontend chat component structures.
+**DAI Track (AI Systems Engineering & The Sharks)**
 
-**Event Game Mechanics & Competition Dynamic**
-- Groups will choose or be assigned to be **The Sharks** (Judging Panels) or the **Entrepreneur Team**.
-- Shark groups will engineer the AI agent backend. Entrepreneur groups will use the frontend to pitch and engage in multi-turn negotiation with the Sharks.
+- Agent Orchestration: Focus entirely on Amazon Bedrock. Create the Bedrock Agent, define Action Groups, and hand off the `Agent ID` and `Alias ID` to the DCCI team.
+- Multi-Persona Foundations: Design complex system instructions and agent templates via KiroCLI/Harness to facilitate concurrent, differentiated AI investor archetypes with memory.
+- Strict Payload Contracts: Mandate precise Structured JSON Output from the model to ensure reliable data mapping into frontend chat component structures.
+
+**Event Game Mechanics & Competition Dynamic (DCCI vs. DAI)**
+
+- **Department vs. Department Showdown:** The workshop operates as a friendly rivalry. The DAI Department plays the role of **The Sharks**, while the DCCI Department plays the role of the **Entrepreneurs**.
+- **The Integration:** DAI engineers the Bedrock Agent ("The Brain") and hands the Agent ID to DCCI. DCCI engineers the API Gateway, Lambda, and S3 Frontend ("The Plumbing"), wiring the two systems together.
 - **The Competition (Human Offense vs. AI Defense)**:
-  - **Shark Teams** act as the defense. Their goal is to engineer rigorous, hard-to-impress AI investor personas that grill the entrepreneurs and defend against weak pitches. They are judged on the AI's intelligence and adherence to character.
-  - **Entrepreneur Teams** act as the offense. They connect to a Shark team's AI and use human negotiation skills to convince the AI to output `"status": "FUNDED"`. They are ranked on a live leaderboard by the total imaginary capital they raise.
+  - **DAI (Shark Teams)** act as the defense. Their goal is to engineer rigorous, hard-to-impress AI investor personas that grill the entrepreneurs. They are judged on the AI's intelligence and adherence to character.
+  - **DCCI (Entrepreneur Teams)** act as the offense. After building the infrastructure, they use the Chat UI to pitch and use human negotiation skills to convince DAI's AI to output `"status": "FUNDED"`. They are ranked on a live leaderboard by total capital raised.
 
 ## Cloud Architecture
 

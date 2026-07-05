@@ -56,13 +56,13 @@ Moving to a stateful architecture shifts the heavy lifting from the students to 
 With the gamified "Sharks vs. Entrepreneurs" mechanic, the workshop flows as follows:
 
 * **Phase 1: The Build (90 minutes)**
-  * *Shark Teams (15 groups):* Open AWS Cloud9/local terminals. Use KiroCLI to deploy the Bedrock Agent backend. They spend the time aggressively tuning the multi-persona prompts (e.g., Dogecoin Dan, Brutal VC) to be tough negotiators.
-  * *Entrepreneur Teams (15 groups):* Deploy the S3 Frontend. They spend the time brainstorming wacky sci-fi startups and testing the UI.
+  * *DAI / Shark Teams:* Focus entirely on AI. Use KiroCLI to deploy the Bedrock Agent. They spend the time aggressively tuning the multi-persona prompts (e.g., Dogecoin Dan, Brutal VC) to be tough negotiators.
+  * *DCCI / Entrepreneur Teams:* Focus entirely on Cloud Infra. Deploy the S3 Frontend, build the API Gateway, and write the AWS Lambda function that will eventually call the Bedrock Agent.
 * **Phase 2: The Integration (30 minutes)**
-  * Entrepreneurs receive the API Gateway endpoints from the Shark Teams. They update their `app.js` file to point to the Sharks' backend.
+  * The Cross-Department Handshake: DAI teams hand over their `Agent ID` and `Alias ID`. DCCI teams inject this into their Lambda function, successfully bridging the DCCI frontend/network with the DAI AI backend.
 * **Phase 3: The Shark Tank (60 minutes)**
-  * **The Dynamic:** Human Offense vs. AI Defense.
-  * Entrepreneurs pitch their ideas using the Chat UI connected to another group's Shark AI.
+  * **The Dynamic:** DCCI Offense vs. DAI AI Defense.
+  * DCCI Entrepreneurs pitch their ideas using the Chat UI they hosted, which connects to the DAI group's Shark AI.
   * The AI Sharks respond, asking tough follow-up questions.
   * Entrepreneurs scramble to defend their startups in the chat in a timed 5-minute round.
   * **Scoring/Win Conditions:**
