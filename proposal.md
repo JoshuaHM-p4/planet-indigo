@@ -58,7 +58,9 @@ Tasks: Prompt engineering patterns, model parameter configurations, and mapping 
 
 ## Expected number of Participants
 
-- Expected Number of Participants: 30 - 50 members (Split into groups/pairs of 1-3 members per AWS Workshop Studio Account)
+- Expected Number of Participants: 30 - 50 members.
+- **Team Structure:** Participants are grouped into "Squads" of 2-4 members (pairing 1-2 DCCI members with 1-2 DAI members).
+- **Environment:** Each Squad is given **ONE shared AWS Workshop Studio Account** to build their entire system collaboratively, bypassing cross-account IAM complexities.
 Profile:
 - DCCI members with complete foundational knowledge (Network, Compute, Storage, Security)
 - Some programming experience (Python or JavaScript helpful for Lambda)
@@ -95,11 +97,11 @@ Target Cohort: 30 - 50 DCCI & DAI Members
 
 **Event Game Mechanics & Competition Dynamic (DCCI vs. DAI)**
 
-- **Department vs. Department Showdown:** The workshop operates as a friendly rivalry. The DAI Department plays the role of **The Sharks**, while the DCCI Department plays the role of the **Entrepreneurs**.
-- **The Integration:** DAI engineers the Bedrock Agent ("The Brain") and hands the Agent ID to DCCI. DCCI engineers the API Gateway, Lambda, and S3 Frontend ("The Plumbing"), wiring the two systems together.
-- **The Competition (Human Offense vs. AI Defense)**:
-  - **DAI (Shark Teams)** act as the defense. Their goal is to engineer rigorous, hard-to-impress AI investor personas that grill the entrepreneurs. They are judged on the AI's intelligence and adherence to character.
-  - **DCCI (Entrepreneur Teams)** act as the offense. After building the infrastructure, they use the Chat UI to pitch and use human negotiation skills to convince DAI's AI to output `"status": "FUNDED"`. They are ranked on a live leaderboard by total capital raised.
+- **The Squad (Internal Collaboration):** The workshop operates in paired "Squads" (2 DCCI + 2 DAI). They share ONE AWS account. The DAI member plays **The Shark Engineer** and the DCCI member plays **The Entrepreneur / Cloud Engineer**.
+- **The Integration:** Inside their shared account, DAI engineers the Bedrock Agent ("The Brain") and hands the Agent ID to their DCCI teammate. DCCI engineers the API Gateway, Lambda, and S3 Frontend ("The Plumbing"), wiring their Squad's system together.
+- **The Competition (External Attack):**
+  - **DAI (Shark Teams)** act as the defense. Their goal is to engineer rigorous, hard-to-impress AI investor personas that grill the entrepreneurs from *other* Squads.
+  - **DCCI (Entrepreneur Teams)** act as the offense. Once their squad's system is built, they use their Chat UI to pitch to the API Gateways built by *competing Squads*. They use human negotiation skills to convince the rival AI to output `"status": "FUNDED"`. They are ranked on a live leaderboard by total capital raised.
 
 ## Cloud Architecture
 

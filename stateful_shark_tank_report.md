@@ -47,22 +47,22 @@ Moving to a stateful architecture shifts the heavy lifting from the students to 
 1. **Chat UI Template (Medium Effort):** Building a responsive React/Vanilla JS chat interface that manages `session_id` and arrays of messages.
 2. **Stateful Backend Boilerplate (High Effort):** Writing a rock-solid AWS Lambda function that safely unpacks the API Gateway proxy event, injects the `session_id` into the `InvokeAgent` API, and formats the output into the strict multi-shark JSON contract.
 3. **KiroCLI/Agent Templates (High Effort):** Writing the declarative YAML/JSON files required for KiroCLI or Harness so students can deploy their Agent infrastructure with a single terminal command.
-4. **AWS Account Provisioning (High Effort):** Configuring IAM roles in 20 Workshop Studio accounts that allow Bedrock Agent creation (which requires complex trust policies).
+4. **AWS Account Provisioning (High Effort):** Configuring IAM roles in 20 Workshop Studio accounts (one per Squad) that allow Bedrock Agent creation, S3, API Gateway, and Lambda execution. By sharing accounts per Squad, organizers bypass the nightmare of cross-account IAM roles.
 
 ---
 
 ### 4. Process (Workshop Flow)
 
-With the gamified "Sharks vs. Entrepreneurs" mechanic, the workshop flows as follows:
+The workshop organizes students into "Squads" (1 DCCI member + 1 DAI member) sharing a single AWS account. The flow is as follows:
 
-* **Phase 1: The Build (90 minutes)**
-  * *DAI / Shark Teams:* Focus entirely on AI. Use KiroCLI to deploy the Bedrock Agent. They spend the time aggressively tuning the multi-persona prompts (e.g., Dogecoin Dan, Brutal VC) to be tough negotiators.
-  * *DCCI / Entrepreneur Teams:* Focus entirely on Cloud Infra. Deploy the S3 Frontend, build the API Gateway, and write the AWS Lambda function that will eventually call the Bedrock Agent.
-* **Phase 2: The Integration (30 minutes)**
-  * The Cross-Department Handshake: DAI teams hand over their `Agent ID` and `Alias ID`. DCCI teams inject this into their Lambda function, successfully bridging the DCCI frontend/network with the DAI AI backend.
-* **Phase 3: The Shark Tank (60 minutes)**
-  * **The Dynamic:** DCCI Offense vs. DAI AI Defense.
-  * DCCI Entrepreneurs pitch their ideas using the Chat UI they hosted, which connects to the DAI group's Shark AI.
+* **Phase 1: The Build (90 minutes - Internal Collaboration)**
+  * *DAI Member (The Shark Engineer):* Focuses entirely on AI in their shared account. Uses KiroCLI to deploy the Bedrock Agent. They spend the time aggressively tuning the multi-persona prompts to be tough negotiators.
+  * *DCCI Member (The Cloud Engineer):* Focuses entirely on Cloud Infra in the same account. Deploys the S3 Frontend, builds the API Gateway, and writes the AWS Lambda function.
+* **Phase 2: The Integration (30 minutes - Internal Handshake)**
+  * The Cross-Department Handshake: The DAI teammate hands over their `Agent ID` and `Alias ID` to their DCCI teammate. The DCCI teammate injects this into the Lambda function, successfully bridging their Squad's frontend/network with the AI backend without needing cross-account IAM.
+* **Phase 3: The Shark Tank (60 minutes - External Competition)**
+  * **The Dynamic:** Squad vs. Squad (Network Layer Attack).
+  * DCCI Entrepreneurs take the public API Gateway URL from a *rival* Squad. They paste it into their Chat UI and pitch their ideas to the rival Squad's Shark AI.
   * The AI Sharks respond, asking tough follow-up questions.
   * Entrepreneurs scramble to defend their startups in the chat in a timed 5-minute round.
   * **Scoring/Win Conditions:**
